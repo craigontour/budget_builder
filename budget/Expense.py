@@ -30,8 +30,8 @@ class Expenses():
             food_expenses2 = set()
             unnecessary_expenses2 = set()
             for i in self.list:
-                if (i.category == 'Phone'      or i.category == 'Auto and Gas' or 
-                    i.category == 'Classes'  or i.category == 'Utilities' or 
+                if (i.category == 'Phone' or i.category == 'Auto and Gas' or 
+                    i.category == 'Classes' or i.category == 'Utilities' or 
                     i.category == 'Mortgage'): 
                     necessary_expenses2.add(i)
                 elif(i.category == 'Groceries' or i.category == 'Eating Out'):
@@ -42,10 +42,12 @@ class Expenses():
             return [necessary_expenses2, food_expenses2, unnecessary_expenses2]
 
     def categorize_set_comprehension(self):
-        necessary_expenses = {x for x in self.list 
-                            if x.category == 'Phone' or x.category == 'Auto and Gas' or 
-                                x.category == 'Classes'  or x.category == 'Utilities' or 
-                                x.category == 'Mortgage'}
+        necessary_expenses = {
+                                x for x in self.list 
+                                    if x.category == 'Phone' or x.category == 'Auto and Gas' or 
+                                        x.category == 'Classes'  or x.category == 'Utilities' or 
+                                        x.category == 'Mortgage'
+                                }
 
         food_expenses = {x for x in self.list 
                             if x.category == 'Groceries' or x.category == 'Eating Out'}
